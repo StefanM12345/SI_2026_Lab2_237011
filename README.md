@@ -114,3 +114,46 @@ Input: non-existing book
 - throw RuntimeException("Book not found")
 
 Со овие 4 тест случаи се покриваат сите branches во функцијата borrowBook.
+## Multiple Condition Testing
+
+### borrowBookMultipleConditionTest
+
+Услов:
+if(title.isEmpty() || author.isEmpty())
+
+Подуслови:
+- A = title.isEmpty()
+- B = author.isEmpty()
+
+Покриени комбинации:
+
+| Test | A | B |
+|---|---|---|
+| 1 | T | T |
+| 2 | T | F |
+| 3 | F | T |
+| 4 | F | F |
+
+Минимален број тест случаи: 4
+
+---
+
+### searchBookMultipleConditionTest
+
+Услов:
+if(book.getTitle().equalsIgnoreCase(title) && !book.isBorrowed())
+
+Подуслови:
+- A = title match
+- B = !book.isBorrowed()
+
+Покриени комбинации:
+
+| Test | A | B |
+|---|---|---|
+| 1 | T | T |
+| 2 | T | F |
+| 3 | F | T |
+| 4 | F | F |
+
+Минимален број тест случаи: 4
