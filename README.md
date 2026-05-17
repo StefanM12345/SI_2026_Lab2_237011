@@ -52,3 +52,33 @@ M = P + 1
 M = 4 + 1 = 5
 
 Цикломатската комплексност на функцијата е 5.
+## Every Statement Testing - searchBookByTitle
+
+За исполнување на Every Statement критериумот потребни се минимум 3 тест случаи.
+
+### Test case 1
+Input: empty string
+
+Се покриваат следните statements:
+- if(title.isEmpty())
+- throw new IllegalArgumentException(...)
+
+### Test case 2
+Input: existing title ("Clean Code")
+
+Се покриваат:
+- for циклусот
+- условот:
+  if(book.getTitle().equalsIgnoreCase(title) && !book.isBorrowed())
+- results.add(book)
+- return results
+
+### Test case 3
+Input: non-existing title ("Unknown")
+
+Се покриваат:
+- for циклусот
+- if(results.isEmpty())
+- return null
+
+Со овие 3 тест случаи се покриваат сите statements во функцијата searchBookByTitle.
