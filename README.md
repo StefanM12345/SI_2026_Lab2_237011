@@ -82,3 +82,35 @@ Input: non-existing title ("Unknown")
 - return null
 
 Со овие 3 тест случаи се покриваат сите statements во функцијата searchBookByTitle.
+## Every Branch Testing - borrowBook
+
+За Every Branch критериумот потребни се минимум 4 тест случаи.
+
+### Test case 1
+Input: empty title and author
+
+Покриена гранка:
+- if(title.isEmpty() || author.isEmpty()) == TRUE
+
+### Test case 2
+Input: existing book
+
+Покриени гранки:
+- if(title.isEmpty() || author.isEmpty()) == FALSE
+- if(title && author match) == TRUE
+- if(!book.isBorrowed()) == TRUE
+
+### Test case 3
+Input: already borrowed book
+
+Покриена гранка:
+- if(!book.isBorrowed()) == FALSE
+
+### Test case 4
+Input: non-existing book
+
+Покриени гранки:
+- if(title && author match) == FALSE
+- throw RuntimeException("Book not found")
+
+Со овие 4 тест случаи се покриваат сите branches во функцијата borrowBook.
